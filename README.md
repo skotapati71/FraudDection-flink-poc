@@ -34,6 +34,10 @@ There is a detailed instructions video from AWS (https://youtu.be/00JgwB5vJps) o
 7. Finally start the flink applicaiton
 8. Check the status and open Flink Job/Task Manager
 
+Note: The application runs in local - Ubuntu, in KDA it needs to create an Fat (UBER) Jar file.
+
+The left screen is generating account/txn data and the right screen is desplyaing flagged accounts for fruad.
+![FlinkPOC](https://github.com/user-attachments/assets/7897ec63-448a-4e84-a42a-3373c42655b4)
 
 
 
