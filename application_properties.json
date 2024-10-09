@@ -1,0 +1,25 @@
+[
+  {
+  "PropertyGroupId": "kinesis.analytics.flink.run.options",
+  "PropertyMap": {
+    "python": "FraudDetection/TxnFraudDetector.py",
+    "jarfile": "FraudDetection/lib/flink-sql-connector-kinesis-4.3.0-1.19.jar"
+   }
+  },
+  {
+    "PropertyGroupId": "consumer.config.0",
+    "PropertyMap": {
+      "input.stream.name": "txn_in_stream",
+      "flink.stream.initpos": "LATEST",
+      "aws.region": "us-east-1"
+    }
+  },
+  {
+    "PropertyGroupId": "producer.config.0",
+    "PropertyMap": {
+      "output.stream.name": "txn_out_stream",
+      "shard.count": "1",
+      "aws.region": "us-east-1"
+    }
+  }
+]
