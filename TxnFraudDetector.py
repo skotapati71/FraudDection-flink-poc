@@ -129,13 +129,13 @@ def main():
     #     create_print_table(output_table_name, output_stream, output_region, stream_initpos)
     # )
 
-    # process tumbling window aggregate if total txn amt > 500
+    # process tumbling window aggregate if total txn amt > 3000
     query = """
             SELECT account_id, SUM(txn_amount) AS total_txn_amt, 
-            TUMBLE_START(proctime, INTERVAL '15' SECONDS) AS window_start,
-            TUMBLE_END(proctime, INTERVAL '15' SECONDS) AS window_end
+            TUMBLE_START(proctime, INTERVAL '30' SECONDS) AS window_start,
+            TUMBLE_END(proctime, INTERVAL '30' SECONDS) AS window_end
             FROM {0}
-            GROUP BY account_id, TUMBLE(proctime, INTERVAL '15' SECONDS)
+            GROUP BY account_id, TUMBLE(proctime, INTERVAL '30' SECONDS)
             HAVING SUM(txn_amount) > 3000
             """.format(input_table_name)
 
